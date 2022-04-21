@@ -1,9 +1,9 @@
 global.DeveloperMode = 'false'
-global.linkGC = ['https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw'] 
+global.linkGC = ['https://chat.whatsapp.com/HCCbnCxZNP743g5vCyzYto'] 
 global.channelYT = ['No hay xd']
-global.owner = ['51940617554']
-global.mods = ['51990181480']
-global.prems = ['5356588048']
+global.owner = ['5215634992998']
+global.mods = ['']
+global.prems = ['']
 
 global.APIs = { // API Prefix
   // name: 'https://website'
@@ -48,8 +48,8 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
-global.packname = 'Lolibot - OFC'
-global.author = '💌 Lobita & Gatito 💫'
+global.packname = 'bot'
+global.author = 'bot craft'
 
 
 global.wm = '©The Shadow Brokers - Bot'
@@ -60,7 +60,7 @@ global.error = '☓ Ocurrió un error inesperado'
 global.nsfw = 'En este grupo no está permitido el contenido +18'
 
 
-global.botname = 'Lolibot - OFC'
+global.botname = 'bot'
 
 global.multiplier = 69 // The higher, The harder levelup
 
