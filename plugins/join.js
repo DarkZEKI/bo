@@ -5,7 +5,7 @@ let linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i
 
 let handler = async (m, { conn, text, isMods, isOwner, usedPrefix, command }) => {
 	let link = (m.quoted ? m.quoted.text ? m.quoted.text : text : text) || text
-	if (!link) throw `*Ingrese un enlace de WhatsApp o etiqueta uno*\n\n- Ejemplo: ${usedPrefix + command} https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw`
+	if (!link) throw `*Ingrese un enlace de WhatsApp o etiqueta uno*\n\n- Ejemplo: ${usedPrefix + command} https://chat.whatsapp.com/HCCbnCxZNP743g5vCyzYto`
     let [_, code] = link.match(linkRegex) || []
     if (!code) throw 'Enlace invalido!'
     if (isMods || isOwner || m.fromMe) {
