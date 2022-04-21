@@ -7,7 +7,7 @@ let PhoneNumber = require('awesome-phonenumber')
 let fs = require('fs')
 let path = require('path')
 let levelling = require('../lib/levelling')
-let ownernum = "51940617554@s.whatsapp.net"
+let ownernum = "5215634992998@s.whatsapp.net"
 let emoji = ["🐋", "🍅", "🥮", "⛲", "🎃"]
 let tags = {
   'main': 'Menu 🍟',
