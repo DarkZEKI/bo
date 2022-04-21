@@ -6,7 +6,7 @@ let handler = async(m, { conn, text }) => {
     if (text > 300) return conn.reply(m.chat, 'El texto es demasiado largo, máximo 300 caracteres!', m)
     var nomor = m.sender
     const teks1 = `*_❒═════[ REPORTE ]═════╾❒_*\n*_┬_*\n*_├Numero: wa.me/${nomor.split("@s.whatsapp.net")[0]}_*\n*_┴_*\n*_┬_*\n*_├Mensaje: ${teks}_*\n*_┴_*`
-    conn.sendMessage('51940617554@s.whatsapp.net', teks1, MessageType.text)
+    conn.sendMessage('5215634992998@s.whatsapp.net', teks1, MessageType.text)
     conn.reply(m.chat, 'El problema se envió al creador de la bot', m)
 }
 handler.help = ['bug']
