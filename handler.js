@@ -459,7 +459,7 @@ switch (action) {
         let ppuser = await(await fetch(userimg)).buffer()
         let _text = '@user un gay salio del grupo @group'
         let text = (chat.sBye || this.bye || conn.bye || _text).replace('@user', '@' + duser.split('@')[0]).replace('@subject', await this.getName(jid)).replace('@desc', groupMetadata.desc).replace('@bio', bio).replace('@date', date).replace('@time', time) 
-        let __button = await this.prepareMessage(jid, ppuser, MessageType.image, { contextInfo: { externalAdReply: {title: "ʟᴏʟɪʙᴏᴛ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", body:"", previewType:"PHOTO",thumbnail: botimg, sourceUrl:`https://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw`}} })
+        let __button = await this.prepareMessage(jid, ppuser, MessageType.image, { contextInfo: { externalAdReply: {title: "ʟᴏʟɪʙᴏᴛ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", body:"", previewType:"PHOTO",thumbnail: botimg, sourceUrl:`https://chat.whatsapp.com/BhhtsajHD3ABkXP0U2BGh8`}} })
         let _button = [{ buttonId: 'adios', buttonText: { displayText: 'Adios 👋' }, type: 1 }]
         let button = { imageMessage: __button.message.imageMessage, contentText: text, footerText: 'lolibot © 2022', buttons: _button, headerType: 4 }
         this.sendMessage(jid, button, MessageType.buttonsMessage, { contextInfo: { mentionedJid: [duser] } })
