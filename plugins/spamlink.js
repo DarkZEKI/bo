@@ -32,18 +32,18 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 let _vote = conn.prepareMessageFromContent(target, {
 "listMessage":  {
 "title": "\t\t\t*‧ 🐋 Auto spam Bot 🐋 ‧*",
-"description": `\nHemos detectado su enlace en uno de nuestros grupo por lo tanto se enviará spam automáticamente.\n\n*Grupo nro 1*\nhttps://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw\n\n*Grupo nro 2*\nhttps://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw`,
+"description": `\nHemos detectado su enlace en uno de nuestros grupo por lo tanto se enviará spam automáticamente.\n\n*Grupo nro 1*\nhttps://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw\n\n*Grupo nro 2*\nhttps://chat.whatsapp.com/BhhtsajHD3ABkXP0U2BGh8`,
 "buttonText": "Opciones",
 "listType": "SINGLE_SELECT",
 "sections": [
 {
 "rows": [
 {
-"title": 'OwO\n\n*Grupo nro 1*\nhttps://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw\n\n*Grupo nro 2*\nhttps://chat.whatsapp.com/FVWUefIddjH5czTfujL2NA',
+"title": 'OwO\n\n*Grupo nro 1*\nhttps://chat.whatsapp.com/BhhtsajHD3ABkXP0U2BGh8\n\n*Grupo nro 2*\nhttps://chat.whatsapp.com/BhhtsajHD3ABkXP0U2BGh8',
 "rowId": 'lolibot'
 },
 {
-"title": '7w7\n\n*Grupo nro 1*\nhttps://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw\n\n*Grupo nro 2*\nhttps://chat.whatsapp.com/EphX7iaMsKj70m0BrZsmvw',
+"title": '7w7\n\n*Grupo nro 1*\nhttps://chat.whatsapp.com/BhhtsajHD3ABkXP0U2BGh8\n\n*Grupo nro 2*\nhttps://chat.whatsapp.com/BhhtsajHD3ABkXP0U2BGh8',
 "rowId": 'lolibot'
 }
 ]}]}}, { quoted: faker, contextInfo: { forwardingScore:999, isForwarded:true, mentionedJid: member } })
