@@ -1,7 +1,7 @@
 global.DeveloperMode = 'false'
 global.linkGC = ['https://chat.whatsapp.com/HCCbnCxZNP743g5vCyzYto'] 
 global.channelYT = ['No hay xd']
-global.owner = ['5215634992998,51940256021']
+global.owner = ['5215634992998']
 global.mods = ['']
 global.prems = ['']
 
