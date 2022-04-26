@@ -20,7 +20,7 @@ let handler = async (m, { conn, text }) => {
 
 }
 handler.help = ['pay @user <amount>']
-handler.tags = ['xp']
+handler.tags = ['money']
 handler.command = /^depositar$/
 handler.rowner = false
 
