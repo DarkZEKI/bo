@@ -3,7 +3,7 @@ global.linkGC = ['https://chat.whatsapp.com/HCCbnCxZNP743g5vCyzYto']
 global.channelYT = ['No hay xd']
 global.owner = ['5215634992998']
 global.mods = ['']
-global.prems = ['51940256021','593997310315']
+global.prems = ['51940256021']
 
 global.APIs = { // API Prefix
   // name: 'https://website'
