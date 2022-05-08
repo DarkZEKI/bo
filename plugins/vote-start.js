@@ -2,8 +2,6 @@ let handler = async (m, { conn, text, usedPrefix, command, isPrems, }) => {
     let user = global.DATABASE._data.users[m.sender]
     if (!text) throw `*Escriva un texto para la votación*\n\n- Ejemplo: ${usedPrefix + command} soy gay?`
     if (!isPrems && user.limit < 1) { 
-    global.DATABASE._data.users[m.sender].limit -= 1
-    conn.reply(m.chat, `🎟️ Se utilizó *1* de su limite!`, m)
     if (!text) throw `*Escriva un texto para la votación*\n\n- Ejemplo: ${usedPrefix + command} soy gay?`
     conn.vote = conn.vote ? conn.vote : {}
     let id = m.chat
@@ -16,7 +14,7 @@ let handler = async (m, { conn, text, usedPrefix, command, isPrems, }) => {
         [],
         []
     ]
-  } else conn.reply(m.chat, `Te quedaste sin limites, compra más escribiendo ${usedPrefix}buylimit`, m)
+  }
 }
 
 handler.help = ['startvote']
