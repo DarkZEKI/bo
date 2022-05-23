@@ -1,21 +1,39 @@
-const { mediafireDl } = require('../lib/mediafire.js')
+const { mediafiredl } = require('@bochilteam/scraper')
+let fetch = require('node-fetch')
+let axios = require('axios')
 
-let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, command }) => {
-if (!text) return m.reply(`🔰Enviar link de descarga  ejemplo🔰 ${usedPrefix + command} *link mediafire*`)
-if (!args[0].includes('mediafire.com')) return m.reply(error.linkmf)
-let mdjon = args.join(' ')
-res = await mediafireDl(mdjon)
-result = `「 *MEDIAFIRE DOWNLOAD* 」
-*DATOS OTENIDOS CON EXITO*
-📛 Nombre : ${res[0].nama}
-🗂 Tamaño : ${res[0].size}
-💬 Link : ${res[0].link}
-_Espere un momento mientras envio su archivo  🔰AGROMOS SP-BOT🔰_`
-m.reply(result)
+let handler = async (m, { isOwner, isPrems, command, usedPrefix, text, args, conn }) => {
+     var limit
+     if((isOwner || isPrems)) limit = 250
+     else limit = 100
+     if (!args[0]) throw `${nolink}\n\nExample:\n${usedPrefix + command} https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file`
+     if (!args[0].match(/mediafire/gi)) throw `URL Invalid`
+     const sentMsg = await m.reply(wait)
+     let full = /f$/i.test(command)
+     let u = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
+     let ss = await (await fetch(global.API('nrtm', '/api/ssweb', { delay: 1000, url: u }))).buffer()
+     let res = await mediafiredl(args[0])
+     let { url, url2, filename, ext, aploud, filesize, filesizeH } = res
+     let isLimit = (isPrems || isOwner ? limit : limit) * 1024 < filesize
+     m.reply(`${JSON.stringify(res, null, 1)}`)
+     /*let capt = `📭 *Mediafire Downloader*
 
-conn.sendFile(m.chat, res[0].link, res[0].nama, null, m, false, {asDocument:true, mimetype:res[0].mime})
+📝 *Name:* ${filename}
+🎚 *Size:* ${filesizeH}
+🗃 *Extension:* ${ext}
+📤 *Uploaded:* ${aploud}
+${isLimit ? `❌ *File size above ${limit} MB, download it yourself*\n` : ''}🚀 *Link:* ${await(await axios.get(`https://tinyurl.com/api-create.php?url=${url}`)).data}`*/ 
+     
+     //if(ss) await conn.sendFile(m.chat, ss, 'screenshot.png', capt, sentMsg, 0, {jpegThumbnail: ss})
+     try {
+     //if(!isLimit) await conn.sendMedia(m.chat, url, 0, {fileName: `${filename}`, mentions: [m.sender]})
+     } catch {
+      throw error 
+  }
 }
 
-handler.command = ['mediafire']
+handler.help = ['mediafire']
+handler.tags = ['downloader']
+handler.command = /^(mediafire|mdfire)$/i
 
 module.exports = handler

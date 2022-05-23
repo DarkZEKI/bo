@@ -1,18 +1,32 @@
-let handler = async(m, { conn, usedPrefix, command }) => {
-  let isPublic = command === "public";
-  let self = global.opts["self"]
+let handler = async(m, { conn, args, text, usedPrefix, command }) => {
 
-  if(self === !isPublic) return conn.sendButton(m.chat, `Dah ${!isPublic ? "Self" : "Public"} dari tadi ${m.sender.split("@")[0] === global.owner[0] ? "Mbak" : "Bang"} :v`, wm, false, [[`${!isPublic ? "Public" : "Self"}`, `${usedPrefix}${!isPublic ? "public" : "self"}`]], m)
+let type = (args[0] || ' ').toLowerCase()
 
-  global.opts["self"] = !isPublic
+if (!text) return conn.send2Button(m.chat, `*Modo privado o público*`, 'elija una opción', '🛡️ Privado', `${usedPrefix + command} self`, '🌍 Publico', `${usedPrefix + command} public`, m)
 
-  conn.sendButton(m.chat, `Berhasil ${!isPublic ? "Self" : "Public"} bot!`, wm, false, [[`${!isPublic ? "Public" : "Self"}`, `${usedPrefix}${!isPublic ? "public" : "self"}`]], m)    
+switch (type) {
+case 'publico':
+case 'public':
+      if (global.opts["self"] == false) return m.reply('El modo *público* ya está activado')
+      global.opts["self"] = false
+      m.reply('Se cambió a modo *público*!')
+      break
+
+case 'self':
+case 'privado':
+      if (global.opts["self"] == true) return m.reply('El modo *privado* ya está activado')
+      global.opts["self"] = true
+      m.reply('Se cambió a modo *privado*!')
+      break
+
+    default:
+conn.send2Button(m.chat, `*Modo privado o público*`, 'elija una opción', '🛡️ Privado', `${usedPrefix + command} self`, '🌍 Publico', `${usedPrefix + command} public`, m)
+  }
 }
 
-handler.help = ["self", "public"]
-handler.tags = ["owner"]
-handler.command = /^(self|public)/i
-
-handler.rowner = true 
+handler.help = ['modo']
+handler.tags = ['owner']
+handler.command = /^(modo|mode)/i
+handler.owner = true 
 
 module.exports = handler

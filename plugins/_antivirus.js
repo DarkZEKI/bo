@@ -12,7 +12,8 @@ handler.all = async function (m, { isBotAdmin }) {
         await this.modifyChat(m.chat, 'clear', {
             includeStarred: false
         }).catch(console.log)
-        m.reply("El mensaje supera los 68 caracteres se elimino el chat por prevención a traba/lag")
+        //this.reply('')
+        //this.reply("El mensaje supera los 68 caracteres se elimino el chat por prevención a traba/lag")
     }
 }
 

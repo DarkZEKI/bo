@@ -8,13 +8,13 @@ switch (type) {
 case 'abrir':
 case 'open':
       conn.groupSettingChange(m.chat, GroupSettingChange.messageSend, false)
-      m.reply('Grupo *abierto* ahora *todos los participantes* pueden escribir!')
+      m.reply('Grupo *abierto* ahora todos los *participantes* pueden escribir!')
       break
 
 case 'cerrar':
 case 'close':
       conn.groupSettingChange(m.chat, GroupSettingChange.messageSend, true)
-      m.reply('Grupo *cerrado* ahora *solo los administradores/as* pueden escribir!')
+      m.reply('Grupo *cerrado* ahora solo los *administradores\'as* pueden escribir!')
       break
 
     default:
@@ -32,10 +32,13 @@ return m.reply(opc)
 
 }
 
+handler.help = ['grupo']
+handler.tags = ['group']
 handler.command = /^(grupo|group)$/i
+
 handler.group = true
 handler.admin = true
 handler.botAdmin = true
 handler.fail = null
-handler.exp = 0
+
 module.exports = handler

@@ -24,7 +24,7 @@ let audio4B = audio4A.exec(m.text)
 let audio5A = /pasen hentai|pasen hentay|antojen/i
 let audio5B = audio5A.exec(m.text)
 
-let audio6A = /eres gay|es gay|que gay|un gay/i
+let audio6A = /eres gay|es gay|que gay|por gay|por gey|por gei|por gai|un gay/i
 let audio6B = audio6A.exec(m.text)
 
 let audio7A = /mirame/i
@@ -54,7 +54,7 @@ let audio14B = audio14A.exec(m.text)
 let audio15A = /^(A|ª|ᵃ|a)$/i
 let audio15B = audio15A.exec(m.text)
 
-let audio16A = /Bot|bot/i
+let audio16A = /Bot |bot /i
 let audio16B = audio16A.exec(m.text)
 
 let audio17A = /Aver el poto|el poto|tu poto/i
@@ -159,11 +159,11 @@ if (audio15B) {
 	} else
 
 if (audio16B) {
-        let ss = ["./storage/sticker/Bot.webp", "./storage/sticker/Bot1.webp"]
+        let ss = ["./storage/sticker/Bot.webp", "./storage/sticker/Bot1.webp", "./storage/sticker/Bot3.webp", "./storage/sticker/Bot4.webp"]
 	let vn = ss[Math.floor(Math.random() * ss.length)]
         let pp = await conn.getProfilePicture(m.sender) 
         let ppp = await(await fetch(pp)).buffer()
-        conn.sendMessage(m.chat, fs.readFileSync(vn), MessageType.sticker, { quoted: m, contextInfo: { externalAdReply: {title: conn.getName(m.sender), body:"© lolibot", previewType: "PHOTO", thumbnail: ppp, sourceUrl:``}}})
+        await conn.sendMessage(m.chat, fs.readFileSync(vn), MessageType.sticker, { quoted: m, contextInfo: { externalAdReply: {title: conn.getName(m.sender), body:"© lolibot", mediaType:"2", previewType: "VIDEO", thumbnail: ppp, mediaUrl: ""}}})
         } else
 
 if (audio17B) {
